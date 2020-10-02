@@ -1,4 +1,4 @@
-def x(a, b, c):
+def d(a, b, c):
     for i in range(b):
         a *= 2
     if a % c == 0:
@@ -8,4 +8,4 @@ def x(a, b, c):
 a = int(input())
 b = int(input())
 c = int(input())
-print(x(a, b, c))
+print(d(a, b, c))
