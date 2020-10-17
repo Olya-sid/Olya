@@ -1,20 +1,21 @@
 def isKaprekar(d):
     a = d ** 2
     s = str(a)
-    h = len(s) - 1
-    k = 10
-    p = 0
+    k = 10 ** (len(s) - 1)
+    p = 10 ** (len(s) / 2)
+    t = False
     if d == 0 or d == 1:
-        return True
+        t = True
     else:
-        for i in range(h):
-            if a // k + a % k == d:
-                p += 1
-            k *= 10
-        if p != 0:
-            return True
+        if len(s) % 2 == 0:
+            if a // p + a % p == d:
+                t = True
         else:
-            return False
+            for i in range(len(s) // 2):
+                if a // k + a % k == d:
+                    t = True
+                k /= 10
+    return t
 
 
 a = int(input())
